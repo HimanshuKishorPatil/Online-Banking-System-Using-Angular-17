@@ -1,0 +1,36 @@
+<div class="reset-password-form">
+  <div class="heading">
+    <h2>Reset Password</h2>
+  </div>
+  <div class="body">
+    <form resetPasswordForm="ngForm" (ngSubmit)="resetPassword()">
+      <div class="form-group">
+        <label for="accountNumber">Account Number:</label>
+        <input type="text" id="accountNumber" name="accountNumber" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="aadhar">Aadhar Number:</label>
+        <input type="text" id="aadhar" name="aadhar" ngModel required>
+      </div>
+      <div class="form-group">
+        <label for="newPassword">New Password:</label>
+        <input type="password" id="newPassword" name="newPassword" ngModel required>
+      </div>
+      <!-- <div class="form-group">
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" ngModel[equalTo]="'newPassword'" required>
+        <div *ngIf="resetPasswordForm.controls.confirmPassword.hasError('equalTo')">
+          Passwords do not match.
+        </div> 
+      </div>-->
+      <div class="form-actions">
+        <button type="submit">Reset Password</button>
+      </div>
+    </form>
+  </div>
+
+</div>

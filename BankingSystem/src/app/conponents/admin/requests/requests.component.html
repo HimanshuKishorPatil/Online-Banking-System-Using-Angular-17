@@ -1,0 +1,49 @@
+<div class="container mt-4">
+    <h1 class="text text-lime-500 ">Account Opening request from Client</h1>
+    <table class="table">
+      <thead>
+        <h1 *ngIf="!isResultLoaded">Loading.................</h1>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Mobile</th>
+          <th scope="col">Aadhaar</th>
+          <th scope="col">Pan</th>
+          <th scope="col">Dob</th>
+          <th scope="col">Address</th>
+          <th scope="col">profilePic</th>
+          <th scope="col">Joining Balance</th>
+          <th scope="col">Action</th>
+
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <tr *ngFor="let Client of requestedNetbankingClientArray; index as i">
+          <td>{{i+1}}</td>
+          <td>{{Client.name }}</td>
+          <td>{{Client.email }}</td>
+          <td>{{Client.mobile}}</td>
+          <td>{{Client.aadhaar}}</td>
+          <td>{{Client.pan}}</td>
+          <td>{{Client.dob}}</td>
+          <td>{{Client.address}}</td>
+          <td></td>
+          <td> <input type="number" id="amount" name="amount"  ng-pattern="/^[0-9]{12}$/" placeholder="fa fa-inr" [(ngModel)]="amount" required [appMaxLength]="10"></td>
+
+          <td>
+            <button type="button" class="btn btn-success" (click)="approveNetbanking(Client)">Approve</button>
+           
+          </td>
+          <td> <button type="button" class="btn btn-danger" (click)="rejectNetbanking(Client)">Reject</button></td>
+
+
+        </tr>
+
+
+      </tbody>
+
+    </table>
+  </div>

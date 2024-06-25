@@ -1,0 +1,72 @@
+.reset-password-form {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 400px;
+    margin: auto;
+    margin-top: 50px;
+    
+    box-sizing: border-box;
+  }
+  
+  .reset-password-form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .form-group div {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  .form-actions {
+    text-align: center;
+  }
+  
+  .form-actions button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .form-actions button:disabled {
+    background-color: #95a5a6;
+    cursor: not-allowed;
+  }
+
+  .heading{
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+   padding: 20px;
+    
+  }
+
+  .body{
+    padding: 20px;
+    box-sizing: border-box;
+  }

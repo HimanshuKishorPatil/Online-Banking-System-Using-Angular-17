@@ -1,0 +1,47 @@
+<div class="home-component">
+
+    <div class="slider" (click)="nextSlide()">
+        <div class="arrow left-arrow" (click)="Slide()">&#9665;</div>
+        <div class="slide" [@slide]="currentImageIndex">
+            <img [src]="images[currentImageIndex]" alt="Slide {{currentImageIndex+1}}">
+        </div>
+        <div class="arrow right-arrow" (click)="Slide()">&#9655;</div>
+
+    </div>
+    <div class="body-wrap align-middle" >
+        <img class="body-bg" >
+        <div class="body-content">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="jumbotron mt-5">
+                            <h1 class="display-4">Welcome to Your Banking App</h1>
+                            <p class="lead">Secure, Fast, and Convenient Banking Services</p>
+                            <hr class="my-4">
+                            <p>Check your account balance, manage transactions, and much more.</p>
+                            <a class="btn btn-primary btn-lg" routerLink="/login" role="button">Get Started</a>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="col-md-4 pt-2">
+                        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+                            <div class="card-header">Quick Access</div>
+                            <div class="card-body">
+                                <h5 class="card-title">View Account</h5>
+                                <p class="card-text">Check your account details and balance.</p>
+                            </div>
+                        </div>
+                        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+                            <div class="card-header">Transfer Money</div>
+                            <div class="card-body">
+                                <h5 class="card-title">Send and Receive Funds</h5>
+                                <p class="card-text">Easily transfer money between accounts.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

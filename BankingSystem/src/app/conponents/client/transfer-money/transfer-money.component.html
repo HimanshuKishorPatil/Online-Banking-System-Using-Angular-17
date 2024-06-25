@@ -1,0 +1,44 @@
+
+<div><h1>Account Balance: <i class="fa fa-inr" aria-hidden="true"></i> {{this.balance}}</h1></div>
+<div class="registration-form" >
+    <div class="label">
+      <h2>Transfer Money</h2>
+    </div>
+    <div class="body">
+      <form #registrationForm="ngForm" (ngSubmit)="transfer()">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" onkeydown="return /[a-zA-Z]/i.test(event.key)"  [(ngModel)]="name" required [appMaxLength]="20">
+        </div>
+        <div class="form-group">
+          <label for="mobile">Mobile:</label>
+          <input   type="number"  id="mobile" name="mobile" ng-pattern="/^[0-9]{10}$/" [(ngModel)]="mobile"  required [appMaxLength]="10">
+        </div>
+       
+        <div class="form-group">
+          <label for="aadhaar">Account Number:</label>
+          <input type="number" id="accountNumber" name="Account Number"  ng-pattern="/^[0-9]{12}$/" [(ngModel)]="accountNumber" required [appMaxLength]="10">
+        </div>
+        <div class="form-group">
+            <label for="aadhaar"><i class="fa fa-inr" aria-hidden="true"></i>Amount:</label>
+            <input type="number" id="amount" name="amount"  ng-pattern="/^[0-9]{12}$/" placeholder="fa fa-inr" [(ngModel)]="amount" required [appMaxLength]="10">
+          </div>
+       
+        
+        
+        <div class="form-actions">
+          <button type="submit" [disabled]="registrationForm.invalid">Transfer</button>
+        </div>
+        <div class="form-outline mb-4">
+        
+            <label type="text" id="form2Example22" class="form-control" >{{this.transactionService.transactionId}}</label>
+          </div>
+      </form>
+    
+    </div>
+  
+  </div>
+
+
+
+  

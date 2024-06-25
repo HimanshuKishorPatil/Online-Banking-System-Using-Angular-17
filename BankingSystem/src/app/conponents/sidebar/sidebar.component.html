@@ -1,0 +1,108 @@
+<div class="wrapper" *ngIf="this.loginService.isLogin">
+
+  <nav id="sidebar" [ngClass]="{ 'active': sidebarShow }">
+
+
+    <button class="sidebar-open btnsidebar text-2xl   bg-violet-600 border-x-4" (click)="sidebarShow = !sidebarShow">
+      <i *ngIf="sidebarShow" class="fa fa-arrow-right font-size-3rem " aria-hidden="true"></i>
+      <i *ngIf="!sidebarShow" class="fa fa-arrow-left  " aria-hidden="true"></i>
+    </button>
+    <div class="sidebar-slider" [class.sidebar-slide-in]="sidebarShow">
+      <button class="sidebar-close" (click)="sidebarShow = !sidebarShow"></button>
+
+      <ul class="list-unstyled components  text-center" *ngIf="this.userRole=='admin'">
+        <li>
+          <a class="sidebar-menu " routerLink="/admin" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-home "></span><span class="menu-text ">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/profile" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-address-card"></span><span class="menu-text">Profile</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/addEmployee" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-graduation-cap"></span> <span class="menu-text">Add Employee</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/admin/addClient" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-user-plus"></span><span class="menu-text">Add Client</span></a>
+        </li>
+        <li>
+          <a routerLink="/admin/history" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-history"></span><span class="menu-text">History</span></a>
+        </li>
+        <li>
+          <a routerLink="/admin/requests" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-file-text text-right"></span><span class="menu-text">Applications</span></a>
+        </li>
+      </ul>
+      <ul class="list-unstyled components  text-center" *ngIf="this.userRole=='employee'">
+        <li>
+          <a class="sidebar-menu " routerLink="/employee" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-home"></span><span class="menu-text ">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/employee/profile" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-address-card"></span><span class="menu-text">Profile</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/employee/addClient" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-user-plus"></span> <span class="menu-text">Add Client</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/employee/credit" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-exchange-alt"></span><span class="menu-text">Transaction</span></a>
+        </li>
+        <li>
+          <a routerLink="/employee/history" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-history"></span><span class="menu-text">History</span></a>
+        </li>
+      </ul>
+      <ul class="list-unstyled components  text-center" *ngIf="this.userRole=='client'">
+        <li>
+          <a class="sidebar-menu " routerLink="/client" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-home"></span><span class="menu-text ">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/client/profile" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-address-card"></span><span class="menu-text">Profile</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/client/transfer" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-exchange-alt"></span> <span class="menu-text">Transfer</span>
+          </a>
+        </li>
+        <li>
+          <a routerLink="/client/history" class="sidebar-menu" routerLinkActive="active-link"
+            [routerLinkActiveOptions]="{exact: true}">
+            <span class="fas fa-history"></span><span class="menu-text">History</span></a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+</div>

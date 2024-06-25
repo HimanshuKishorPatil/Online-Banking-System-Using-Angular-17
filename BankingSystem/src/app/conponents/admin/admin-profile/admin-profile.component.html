@@ -1,0 +1,33 @@
+<div class="profile-container">
+    <div class="left-half">
+        <h2>User Profile</h2>
+        <div class="profile-info">
+            <img [src]="this.loginService.loggedInUser?.profilePic" alt="Profile Picture" class="profile-picture">
+            <div class="user-details">
+                <p><strong>Name:</strong> {{this.loginService.loggedInUser?.name }}</p>
+                <p><strong>Date of Birth:</strong> {{this.loginService.loggedInUser?.dob }}</p>
+                <p><strong>aadhaar:</strong> {{this.loginService.loggedInUser?.aadhaar}}</p>
+                <p><strong>PAN:</strong> {{this.loginService.loggedInUser?.pan }}</p>
+                <p><strong>Mobile:</strong> {{ this.loginService.loggedInUser?.mobile }} <button
+                        (click)="updateMobile('newMobile')">Edit</button></p>
+                <p><strong>Email:</strong> {{ this.loginService.loggedInUser?.email }} <button
+                        (click)="updateEmail('newEmail')">Edit</button></p>
+                <p><strong>Address:</strong> {{ this.loginService.loggedInUser?.address}} <button
+                        (click)="updateAddress('newAddress')">Edit</button></p>
+                <!-- Add other user details -->
+            </div>
+        </div>
+    </div>
+    <div class="right-half">
+        <h3>Edit Profile</h3>
+        <form class="edit-form">
+            <p><strong>Mobile:</strong> <input type="text" [(ngModel)]="newMobile"><button
+                    (click)="updateMobile(newMobile)">Update</button></p>
+            <p><strong>Email:</strong> <input type="text" [(ngModel)]="newEmail"><button
+                    (click)="updateEmail(newEmail)">Update</button></p>
+            <p><strong>Address:</strong> <input type="text" [(ngModel)]="newAddress"><button
+                    (click)="updateAddress(newAddress)">Update</button></p>
+            <!-- Add other fields for editing -->
+        </form>
+    </div>
+</div>

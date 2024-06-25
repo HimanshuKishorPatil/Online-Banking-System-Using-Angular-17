@@ -1,0 +1,49 @@
+<div class="registration-form">
+  <div class="label">
+    <h2>Registration Form</h2>
+  </div>
+  <div class="body">
+    <form #registrationForm="ngForm" (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" onkeydown="return /[a-zA-Z]/i.test(event.key)"  [(ngModel)]="name" required [appMaxLength]="20">
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile:</label>
+        <input   type="number"  id="mobile" name="mobile" ng-pattern="/^[0-9]{10}$/" [(ngModel)]="mobile"  required [appMaxLength]="10">
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="email"  required [appMaxLength]="30">
+      </div>
+      <div class="form-group">
+        <label for="aadhaar">Aadhaar Number:</label>
+        <input type="number" id="aadhaar" name="aadhaar"  ng-pattern="/^[0-9]{12}$/" [(ngModel)]="aadhaar" required [appMaxLength]="12">
+      </div>
+      <div class="form-group">
+        <label for="pan">PAN Card Number:</label>
+        <input type="text" id="pan" name="pan" [(ngModel)]="pan" required [appMaxLength]="10">
+      </div>
+      <div class="form-group">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="dob" [(ngModel)]="dob" required>
+      </div>
+      <div class="form-group">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" [(ngModel)]="address" required [appMaxLength]="30"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" [(ngModel)]="profilePic"
+          (change)="handlePhotoUpload($event)">
+      </div>
+      <div class="form-actions">
+        <button type="submit" [disabled]="registrationForm.invalid">Register</button>
+      </div>
+    </form>
+    <div class="register-link">
+      Already registered? <a class="text-cyan-400" routerLink="/applicationStatus">Application Status</a>
+    </div>
+  </div>
+
+</div>

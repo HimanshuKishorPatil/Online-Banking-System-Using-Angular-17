@@ -1,0 +1,39 @@
+<p>Transaction-history works!</p>
+<div class="container mt-4">
+    <h1 class="text text-lime-500 ">Account Opening request from Transaction</h1>
+    <table class="table">
+      <thead>
+        <h1 *ngIf="!isResultLoaded">Loading.................</h1>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Details</th>
+          <th scope="col">Type</th>
+          <th scope="col">Time</th>
+          <th scope="col">Status</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <tr *ngFor="let Transaction of transactionArray">
+         
+          <td>{{Transaction.trans_id }}</td>
+          <td>{{Transaction.amount}}</td>
+          <td>{{Transaction.details}}</td>
+          <td>{{Transaction.type }}</td>
+          <td>{{Transaction.time}}</td>
+          <td>{{Transaction.status}}</td>
+          
+          
+  
+
+
+        </tr>
+
+
+      </tbody>
+
+    </table>
+  </div>

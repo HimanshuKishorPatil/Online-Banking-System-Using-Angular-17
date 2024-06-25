@@ -1,0 +1,35 @@
+<div class="Netbanking-form">
+  <div class="netbanking-header">
+    <h2>Net-Banking Form</h2>
+  </div>
+  <div class="login-body">
+  <form #registrationForm="ngForm" (ngSubmit)="netBanking()">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="name" required [appMaxLength]="20">
+    </div>
+    <div class="form-group">
+      <label for="mobile">Account Number</label>
+      <input type="number" id="Account" name="A/c" [(ngModel)]="accountNum" required [appMaxLength]="10">
+    </div>
+    
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required>
+    </div>
+    <div class="form-group">
+      <label for="password">Confirm Password:</label>
+      <input type="password" id="confirmPassword" name="password" [(ngModel)]="confirmPassword" required>
+    </div>
+   
+    <div class="form-actions">
+      <button type="submit" [disabled]="registrationForm.invalid">Create Net-Banking</button>
+    </div>
+    
+  </form>
+</div>
+</div>

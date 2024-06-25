@@ -1,0 +1,36 @@
+<div class="registration-form">
+  <div class="label">
+    <h2>Application Status</h2>
+  </div>
+  <div class="body">
+    <form #registrationForm="ngForm" (ngSubmit)="getAccountStatus()">
+      <div class="form-group">
+        <label for="aadhaar">Aadhaar Number:</label>
+        <input type="number" id="aadhaar" name="aadhaar" [(ngModel)]="aadhaar" required [appMaxLength]="12">
+      </div>
+
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="name" required [appMaxLength]="20">
+      </div>
+
+
+
+
+      <div class="form-actions">
+        <button type="submit" [disabled]="registrationForm.invalid">Get Account Number</button>
+      </div>
+      <br>
+      <div class="form-outline mb-4">
+        
+        <label  type="text" id="form2Example22" class="form-control"  >{{this.applicationStatus.accountStatus}}</label>
+      </div>
+      <div class="form-outline mb-4">
+        
+        <label type="text" id="form2Example22" class="form-control" >{{this.applicationStatus.accountNum}}</label>
+      </div>
+
+    </form>
+  </div>
+
+</div>

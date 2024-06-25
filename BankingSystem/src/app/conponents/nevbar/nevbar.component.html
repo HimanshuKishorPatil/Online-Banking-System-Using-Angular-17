@@ -1,0 +1,57 @@
+<div *ngIf="!this.loginService.isLogin">
+  <nav class="navbar" fixedInViewport="true">
+    <div class="logo">
+      <span><i class="fa fa-university" aria-hidden="true"></i>Name</span>
+      <!-- <img src="../../../assets/img/Banking.png" alt="Freshfruits.com"> -->
+    </div>
+    <button (click)="toggleMenu()" class="toggle-btn">&#9776;</button>
+    <div class="menu" [ngClass]="{'active':isMenuOpen}">
+      <ul>
+
+        <li><a routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}" >Home</a></li>
+
+        <li><a routerLink="/login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Login</a></li>
+        <li><a routerLink="/register" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Register</a></li>
+        <li><a routerLink="/netBanking" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Net Banking</a></li>
+
+      </ul>
+
+    </div>
+  </nav>
+</div>
+
+
+<div *ngIf="this.loginService.isLogin">
+  <nav class="navbar" fixedInViewport="true">
+    <div class="logo">
+      <span><i class="fa fa-university" aria-hidden="true"></i>Name</span>
+
+    </div>
+
+    <div class="sidebar-header">
+      <img [src]="this.loginService.loggedInUser?.profilePic" alt="profile_photo">
+      <a class="username font-sans from-cyan-50"
+        href="">{{this.loginService.loggedInUser?.name}}</a>
+        
+    </div>
+
+
+    <div class="menu" [ngClass]="{'active':isMenuOpen}">
+      <ul>
+
+
+
+
+        <li> <button [routerLink]="['/login']" (click)="logout()"><i
+              class="fa fa-sign-out" aria-hidden="true"></i></button></li>
+
+
+
+      </ul>
+
+    </div>
+
+
+
+  </nav>
+</div>

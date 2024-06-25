@@ -1,0 +1,16 @@
+<app-nevbar></app-nevbar>
+<div  *ngIf="!this.loginService.isLogin">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="afterlogin"  *ngIf="this.loginService.isLogin">   
+       
+        <div ><app-sidebar></app-sidebar></div>
+        <div>
+            <router-outlet></router-outlet>
+        </div>
+    
+</div>
+
+
+

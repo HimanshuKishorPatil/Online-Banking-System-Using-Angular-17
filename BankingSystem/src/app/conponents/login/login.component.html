@@ -1,0 +1,28 @@
+<div class="login-panel">
+  <div class="login-header">
+    <h2>Login</h2>
+  </div>
+  <div class="login-body">
+    <form loginForm="ngForm" >
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input class="form-control" type="text" id="username" name="username"  [(ngModel)]="username"  required [appMaxLength]="15">
+      </div>
+      <div >
+        <label for="password">Password:</label>
+        <input  class="form-control" type="password" id="password" name="password" [(ngModel)]="password"    required [appMaxLength]="15">
+      </div>
+      <div class="form-actions">
+        <a routerLink="/reset">Forgot Password?</a>
+      </div>
+      <div class="form-actions">
+        <button type="submit"    (click)="login()">Login</button>
+      </div>
+      <div class="register-link">
+        Don't have an account? <a routerLink="/register" >Register</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!--[disabled]="!loginForm.form.valid" [(ngModel)]="this.username" [(ngModel)]="this.password"   -->
